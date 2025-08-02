@@ -1,10 +1,10 @@
-FROM ubuntu:noble AS builder
+FROM ubuntu:24.10 AS builder
 
 RUN apt-get update && apt-get install -y curl
 RUN curl -L https://install.quickwit.io | sh
 
 
-FROM ubuntu:noble AS quickwit
+FROM ubuntu:24.10 AS quickwit
 
 LABEL org.opencontainers.image.title="Quickwit"
 LABEL maintainer="Quickwit, Inc. <hello@quickwit.io>"
